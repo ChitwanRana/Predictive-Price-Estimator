@@ -1,18 +1,28 @@
 import streamlit as st
+from Index import navbar
 
 
 st.set_page_config(page_title="PREDICTIVE PRICE PREDICTION",page_icon='🔮')
 
-st.markdown(
-    f'''
-        <style>
-            .sidebar .sidebar-content {{
-                width: 375px;
-            }}
-        </style>
-    ''',
-    unsafe_allow_html=True
-)
+page_bg_img='''
+<style>
+[data-testid="stAppViewContainer"]{
+background-color:Light grey
+}
+</style>
+
+'''
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
+col1,col2=st.columns([1,10])
+with col1:
+ st.image('navigation.png',width=60 )
+
+
+with col2:
+ st.markdown(navbar, unsafe_allow_html=True)
+
+
 st.sidebar.success("Select above option")
 st.title('WELCOME TO HOME PAGE 🏡')
 st.header('Predicting Prices with Accuracy 🚨')
